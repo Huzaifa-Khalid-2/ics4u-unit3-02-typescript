@@ -1,33 +1,35 @@
 /**
- * The program shows what the energy is released
- *   when user enters mass.
+ * This program does factorial recursion
  *
  * By:      Huzaifa Khalid
  * Version: 1.0
- * Since:   2022-09-14
- */
-/**
- * The function gets the reversestring
- *
- * @param {string} string - string value
- * @returns {string} - Retrub value
+ * Since:   2022-11-09
  */
 
-function reverseString(string: string): string {
-  if (string === '') {
-    return string
+import promptSync from 'prompt-sync'
+/**
+ *
+ * @param {number} someInt parsedInt
+ * @returns {number} factorial of number
+ */
+
+function factorial(integer: number): number {
+  let answer
+  if (integer < 0) {
+    answer = -1
+  } else if (integer === 0) {
+    answer = 1
   } else {
-    return reverseString(string.slice(1, 10)) + string[0]
+    answer = factorial(integer - 1) * integer
   }
+  return answer
 }
 
 function main() {
-  const aString = 'recursion'
-
-  console.log('')
-  console.log(`The orignal string is: ${aString}`)
-  console.log(`The reversed string is: ${reverseString(aString)}`)
-  console.log('\nDone')
+  const prompt = promptSync()
+  const userNumber = prompt('Enter a Number: ')
+  const userInteger = parseInt(userNumber)
+  console.log(`The Factorial of ${userInteger} is ${factorial(userInteger)}`)
+  console.log('\nDone.')
 }
-
 main()
