@@ -1,7 +1,7 @@
 /**
  * This program does factorial recursion
  *
- * By:      Huzaifa Khalid
+ * By:   Huzaifa Khalid
  * Version: 1.0
  * Since:   2022-11-09
  */
@@ -29,7 +29,7 @@ function main() {
   const prompt = promptSync()
   const userNumber = prompt('Enter a Number: ')
   const userInteger = parseInt(userNumber)
-  console.log(`The Factorial of ${userInteger} is ${factorial(userInteger)}`)
+  console.log(`${userInteger}! = ${factorial(userInteger)}`)
   console.log('\nDone.')
 }
 main()
